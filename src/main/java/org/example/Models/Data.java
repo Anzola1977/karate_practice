@@ -1,4 +1,7 @@
-package org.example;
+package org.example.Models;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Data {
     private int year;
@@ -47,5 +50,14 @@ public class Data {
 
     public void setHardDiskSize(String hardDiskSize) {
         this.hardDiskSize = hardDiskSize;
+    }
+
+    public Map<String, Object> toMap() {
+        Map<String, Object> mapData = new HashMap<>();
+        mapData.put("year", this.year);
+        mapData.put("cpuModel", this.cpuModel);
+        mapData.put("price", this.price);
+        mapData.put("hardDiskSize", this.hardDiskSize);
+        return mapData;
     }
 }

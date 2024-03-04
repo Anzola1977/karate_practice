@@ -7,43 +7,53 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserPost {
+public class Entity {
     private String name;
-    private String job;
+    private Data data;
 
-    public UserPost() {
+    public Entity() {
         // Вот где собака порылась
         // Для десериализации объекта jackson'у нужен был пустой конструктор
         // Я вам об этом напоминал несколько раз, а сейчас сам забыл
     }
 
-    public UserPost(String name, String job) {
+    public void setName(String name) {
         this.name = name;
-        this.job = job;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
+    }
+
+    public Entity(String name, Data data) {
+        this.name = name;
+        this.data = data;
     }
 
     public String getName() {
         return name;
     }
-    public String getJob() {
-        return job;
+
+    public Data getData() {
+        return data;
     }
+
     public String toJson() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(this);
     }
 
-    public UserPost(String json) throws JsonProcessingException {
+    public Entity(String json) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
-        UserPost userPost = objectMapper.readValue(json, UserPost.class);
-        this.name = userPost.getName();
-        this.job = userPost.getJob();
+        Entity entity = objectMapper.readValue(json, Entity.class);
+        this.name = entity.getName();
+        this.data = entity.getData();
     }
 
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
         map.put("name", this.name);
-        map.put("job", this.job);
+        map.put("data", this.data.toMap());
         return map;
     }
 }

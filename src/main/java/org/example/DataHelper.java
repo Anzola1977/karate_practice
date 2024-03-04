@@ -4,15 +4,18 @@ import com.github.javafaker.Faker;
 import org.example.Models.Data;
 import org.example.Models.Entity;
 import org.example.Models.EntityCreated;
+import org.yaml.snakeyaml.events.Event;
 
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
 
 
-public class PostDataHelper {
-
+public class DataHelper {
+    static Entity entity = new Entity();
+    static Data data = new Data();
     static Faker faker = new Faker(new Locale("en"));
+    //static String ID = getEntityCreatedMap().get(entity.);
 
     public static Map<String, Object> getEntityPostMap(String json) throws IOException {
         return new Entity(json).toMap();
@@ -27,8 +30,8 @@ public class PostDataHelper {
     }
 
     public static String createEntityData() throws IOException{
-        Entity entity = new Entity();
-        Data data = new Data();
+//        Entity entity = new Entity();
+//        Data data = new Data();
         data.setCpuModel("Intel Core i9");
         data.setHardDiskSize("2 TB");
         data.setPrice(1300.67);
@@ -38,15 +41,16 @@ public class PostDataHelper {
         return entity.toJson();
     }
 
-//    public static PostData createPostData() {
-//        GorestUsersTests.userGetID();
-//        PostData postData = new PostData();
-//        Faker faker = new Faker();
-//        postData.setUser_id(GorestUsersTests.userID);
-//        postData.setTitle(faker.book().title());
-//        postData.setBody(faker.lorem().paragraph());
-//        return postData;
-//    }
+    public static String updateEntityData() throws IOException {
+        createEntityData();
+        data.setCpuModel("Intel Core i12");
+        data.setHardDiskSize("5 TB");
+        data.setPrice(1800.0);
+        data.setYear(2024);
+        entity.setName(faker.name().fullName());
+        entity.setData(data);
+        return entity.toJson();
+    }
 //
 //    public static CommentData createCommentData() {
 //        GorestPostTests.postGetID();

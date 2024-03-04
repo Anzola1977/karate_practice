@@ -6,13 +6,17 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserCreated {
+public class EntityCreated {
     private final String id;
     private final String createdAt;
 
-    public UserCreated(){
+    public EntityCreated(){
         this.id = "#string";
         this.createdAt = "#string";
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String toJson() throws IOException {
