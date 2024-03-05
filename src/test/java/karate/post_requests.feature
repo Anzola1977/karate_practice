@@ -2,13 +2,12 @@ Feature: Post requests
 
   Background:
     * url 'https://api.restful-api.dev/'
+    Given header Content-Type = 'application/json'
+    * def helper = Java.type('org.example.DataHelper')
 
   Scenario: Testing post object
     Given path '/objects'
-    * def helper = Java.type('org.example.DataHelper')
     * def entity = helper.createEntityData()
-
-    And header Content-Type = 'application/json'
     And request entity
     When method post
     Then status 200
@@ -32,10 +31,7 @@ Feature: Post requests
   @ignore @getEntity
   Scenario: Testing put object
     Given path '/objects/' + realResponse.id
-    * def helper = Java.type('org.example.DataHelper')
     * def entity = helper.updateEntityData()
-
-    And header Content-Type = 'application/json'
     And request entity
     When method put
     Then status 200
@@ -53,10 +49,7 @@ Feature: Post requests
   @ignore @getEntity
   Scenario: Testing patch object
     Given path '/objects/' + realResponse.id
-    * def helper = Java.type('org.example.DataHelper')
     * def entity = helper.patchEntityData()
-
-    And header Content-Type = 'application/json'
     And request entity
     When method patch
     Then status 200
@@ -74,8 +67,6 @@ Feature: Post requests
   @ignore @getEntity
   Scenario: Testing delete object
     Given path '/objects/' + realResponse.id
-
-    And header Content-Type = 'application/json'
     And request entity
     When method delete
     Then status 200
