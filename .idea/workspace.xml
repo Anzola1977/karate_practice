@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea9ae872-d672-4916-b935-242b93e485b9" name="Changes" comment="All tests are working">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/karate/post_requests.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/karate/post_requests.feature" afterDir="false" />
-    </list>
+    <list default="true" id="ea9ae872-d672-4916-b935-242b93e485b9" name="Changes" comment="background added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,12 +123,21 @@
       <option name="project" value="LOCAL" />
       <updated>1709626826375</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="background added">
+      <option name="closed" value="true" />
+      <created>1709646357947</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709646357947</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="One more" />
     <MESSAGE value="All tests are working" />
-    <option name="LAST_COMMIT_MESSAGE" value="All tests are working" />
+    <MESSAGE value="background added" />
+    <option name="LAST_COMMIT_MESSAGE" value="background added" />
   </component>
 </project>
