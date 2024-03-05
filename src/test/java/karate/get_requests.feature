@@ -1,7 +1,7 @@
 Feature: Testing get requests
 
   Background:
-* url 'https://api.restful-api.dev/'
+    * url 'https://api.restful-api.dev/'
 
   Scenario: Testing get list of all objects
     Given path '/objects'
